@@ -1,0 +1,41 @@
+{
+  "name": "cpp-group",
+  "displayName": "cpp-group",
+  "description": "This extension groups a .cpp file together with the appropriate .h file in the editor tab view",
+  "version": "1.0.0",
+  "author": {
+    "name": "sliptrixx",
+    "email": "sliptrixx@hibzz.games",
+    "url": "https://hibzz.games/"
+  },
+  "license":"MIT",
+  "publisher": "hibzzgames",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sliptrixx/cpp-group.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sliptrixx/cpp-group/issues"
+  },
+  "keywords": ["c++", "group", "tab management"],
+  "engines": { "vscode": "^1.89.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.89.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
