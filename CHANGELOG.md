@@ -2,8 +2,11 @@
 
 All notable changes to the "cpp-group" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## [Unreleased]
 
-- Initial release
+### Added 
+
+- Added support for `.c` files
+
+## [1.0.0] - 2024-05-20
+Initial Release

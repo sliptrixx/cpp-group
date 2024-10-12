@@ -2,7 +2,7 @@
   "name": "cpp-group",
   "displayName": "cpp-group",
   "description": "This extension groups a .cpp file together with the appropriate .h file in the editor tab view",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "sliptrixx",
     "email": "sliptrixx@hibzz.games",
