@@ -5,7 +5,6 @@ import * as vscode from 'vscode';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-
 	vscode.window.tabGroups.onDidChangeTabs( ( e: vscode.TabChangeEvent ) => {
 		e.opened.forEach( openedTab => {
 			if( !( openedTab.input instanceof vscode.TabInputText ) ) {
@@ -31,9 +30,17 @@ export function activate(context: vscode.ExtensionContext) {
 				} );
 
 				if( pairTab !== undefined ) {
+					let isSourceLeft : boolean = true;
+					let extensionConfigs : vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration( "cpp-group" );
+					if( extensionConfigs.has( "isSourceLeft" ) ) {
+						let readValue = extensionConfigs.get< boolean >( "isSourceLeft" );
+						if( readValue != undefined ) {
+							isSourceLeft = readValue;
+						}
+					}
 					const currTabGroup : vscode.TabGroup = openedTab.group;
 					const pairTabIdx : number = currTabGroup.tabs.indexOf( pairTab );
-					const newIdx : number = pairTabIdx + ( isSourceFile ? 1 : 2 );	// current schema places .cpp file to the left and the .h file to the right
+					const newIdx : number = pairTabIdx + ( isSourceFile == isSourceLeft ? 1 : 2 ); // XOR operation
 					vscode.commands.executeCommand('moveActiveEditor', { to: 'position', by: 'tab', value: newIdx } );
 				}
 			}
