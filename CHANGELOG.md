@@ -4,6 +4,8 @@ All notable changes to the "cpp-group" extension will be documented in this file
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-10-12
+
 ### Added 
 
 - Added support for `.c` files
