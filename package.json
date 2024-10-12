@@ -37,5 +37,17 @@
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
     "typescript": "^5.4.5"
+  },
+  "contributes": {
+    "configuration": {
+      "title": "cpp-group",
+      "properties": {
+        "cpp-group.isSourceLeft": {
+          "type": "boolean",
+          "default": true,
+          "description": "Place the source file to the left of the header file"
+        }
+      }
+    }
   }
 }
